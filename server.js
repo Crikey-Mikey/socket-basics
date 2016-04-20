@@ -10,8 +10,10 @@ io.on('connection', function(socket) {
 	console.log('User connected via socket.io!');
 
 	socket.on('message', function(message) {
-		console.log('Message received: ' + message.text);
-		socket.broadcast.emit('message', message);
+		console.log('Message received: ' + message.text);				
+		// socket.broadcast.emit('message', message);
+		// broadcast to all
+		io.emit('message', message);
 	});
 
 	socket.emit('message', {
