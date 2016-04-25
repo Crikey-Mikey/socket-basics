@@ -4,7 +4,7 @@ var socket = io();
 
 console.log(name + ' wants to join ' + room );
 
-jQuery('.room-title').append('Chat room: ' + room);
+jQuery('.room-title').append(room);
 
 socket.on('connect', function() {
 	console.log('connected to socket.io server!');
